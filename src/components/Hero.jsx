@@ -221,10 +221,18 @@ export default function Hero() {
           <div className="relative">
             {/* Glowing ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-sky via-accent-indigo to-cyan-400 opacity-20 blur-2xl scale-110" />
-            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent-sky/30 shadow-2xl glow-blue">
-              <img src={avatar} alt="Geeth Isuru" className="w-full h-full object-cover" />
+            {/* Spinning dashed ring */}
+            <div className="absolute -inset-3 rounded-full border-2 border-dashed border-accent-sky/20 animate-spin" style={{ animationDuration: '20s' }} />
+            {/* Circle photo */}
+            <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent-sky/40 shadow-2xl glow-blue">
+              <img
+                src={avatar}
+                alt="Geeth Isuru"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 15%' }}
+              />
             </div>
-            {/* Floating tag */}
+            {/* Floating tag bottom-left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -233,6 +241,7 @@ export default function Hero() {
             >
               <span className="text-accent-sky">⚡</span> Aspiring Data Engineer
             </motion.div>
+            {/* Floating tag top-right */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
